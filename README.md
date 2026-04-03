@@ -1,7 +1,7 @@
 # Ntando's Portfolio: Debug & Refactor Project
 
 ## Overview
-This project is a fully responsive, multi-page personal portfolio website built exclusively with HTML and CSS. The primary purpose of this website is to showcase technical skills in web development, data analysis, and problem-solving. The project required taking a 70% complete, error-ridden starter template and refactoring it into a professional, semantic, and highly accessible final product.
+This project is a fully responsive, multi-page personal portfolio website built exclusively with HTML and CSS. The primary purpose of this website is to showcase technical skills in web development, and problem-solving. The project required taking a 70% complete, error-ridden starter template and refactoring it into a professional, semantic, and highly accessible final product.
 
 ## Issues Found
 Upon initial review of the starter codebase, I identified multiple critical errors:
