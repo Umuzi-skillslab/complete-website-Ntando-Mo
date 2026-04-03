@@ -52,6 +52,9 @@ To solve this, I realized I couldn't just patch the CSS; I needed to systematica
 **Navigation Menu (Showing Hover States):**
 ![Navigation Menu](./screenshots/navigation.png)
 
+**Footer (Like this across the website):**
+![Footer](./screenshots/footer.png)
+
 ### 3. Before/After Comparison
 **Home Page Transformation:**
 ![Before and After Comparison](./screenshots/before-after.png)
