@@ -31,7 +31,8 @@
         <h2>Get In Touch</h2>
 
         <form action="#" method="POST">
-          <label for="name">Full Name:</label>
+          
+          <label for="name">Full Name: <span style="color: #b91c1c;">*</span></label>
           <input
             type="text"
             id="name"
@@ -39,9 +40,12 @@
             required
             minlength="2"
             placeholder="Your Name"
+            autocomplete="name"
+            aria-describedby="name-hint"
           />
+          <span id="name-hint" class="form-hint" style="display: block; margin-bottom: 1rem; font-size: 0.85rem; color: #475569;">Please enter your first and last name.</span>
 
-          <label for="email">Email Address:</label>
+          <label for="email">Email Address: <span style="color: #b91c1c;">*</span></label>
           <input
             type="email"
             id="email"
@@ -49,9 +53,24 @@
             required
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             placeholder="Your Email"
+            autocomplete="email"
+            aria-describedby="email-hint"
           />
+          <span id="email-hint" class="form-hint" style="display: block; margin-bottom: 1rem; font-size: 0.85rem; color: #475569;">I will use this to get back to you.</span>
 
-          <label for="inquiry">Nature of Inquiry:</label>
+          <label for="phone">Phone Number: <span style="color: #475569; font-weight: normal;">(optional)</span></label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            placeholder="+27 76 379 0913" 
+            pattern="[+]?[0-9\s\-]{7,15}" 
+            autocomplete="tel" 
+            aria-describedby="phone-hint"
+          />
+          <span id="phone-hint" class="form-hint" style="display: block; margin-bottom: 1rem; font-size: 0.85rem; color: #475569;">Include your country code (e.g., +27).</span>
+
+          <label for="inquiry">Nature of Inquiry: <span style="color: #b91c1c;">*</span></label>
           <select id="inquiry" name="inquiry" required>
             <option value="">Select a topic...</option>
             <option value="webdev">Web Development</option>
@@ -59,7 +78,7 @@
             <option value="other">Other</option>
           </select>
 
-          <fieldset>
+          <fieldset style="margin-bottom: 1.25rem;">
             <legend>Preferred Contact Method:</legend>
             <label for="contact-email">
               <input
@@ -82,7 +101,7 @@
             </label>
           </fieldset>
 
-          <label for="message">Message:</label>
+          <label for="message">Message: <span style="color: #b91c1c;">*</span></label>
           <textarea
             id="message"
             name="message"
@@ -91,7 +110,7 @@
             placeholder="How can I help you?"
           ></textarea>
 
-          <button type="submit">Send Message</button>
+          <button type="submit" style="margin-top: 1rem;">Send Message</button>
         </form>
       </section>
     </main>
