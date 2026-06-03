@@ -106,7 +106,7 @@ To solve this, I realized I couldn't just patch the CSS; I needed to systematica
 **Validation for all HTML pages:**
 ![W3C HTML validation](./screenshots/html-validator.png)
 
-### 5. HTML W3C Validation
+### 5. CSS W3C Validation
 
 **Validation for CSS file:**
 ![W3C CSS validation](./screenshots/css-validator.png)
