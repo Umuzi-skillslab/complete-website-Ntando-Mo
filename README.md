@@ -66,6 +66,8 @@ To solve this, I realized I couldn't just patch the CSS; I needed to systematica
 
 ## Screenshots
 
+**Please note:** Some screenshots may appear like they have stirpes whereas they do not. Those stripes are only caused by the screen capturing software I used.
+
 ### 1. The Completed Pages
 
 **Home Page:**
@@ -108,6 +110,17 @@ To solve this, I realized I couldn't just patch the CSS; I needed to systematica
 
 **Validation for CSS file:**
 ![W3C CSS validation](./screenshots/css-validator.png)
+
+### 6. Responsive design testing
+**iPhone 12 Pro:**
+![iPhone 12 Pro - Dev Tools](./screenshots/iphone12-pro.png)
+
+
+**Asus Zenbook Fold:**
+![Asus Zenbook Fold - Dev Tools](./screenshots/asus.png)
+
+**Nest Hub Max:**
+![Nest Hub Max](./screenshots/nesthub.png)
 
 ## How to View Locally
 
