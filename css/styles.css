@@ -40,6 +40,14 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.8;
+  
+  /* NEW: Ambient Glow / Mesh Gradient Background */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(194, 168, 120, 0.15) 0px, transparent 60vw), /* Soft Gold top-left */
+    radial-gradient(at 100% 0%, rgba(31, 61, 43, 0.08) 0px, transparent 60vw),  /* Deep Green top-right */
+    radial-gradient(at 100% 100%, rgba(194, 168, 120, 0.15) 0px, transparent 60vw), /* Soft Gold bottom-right */
+    radial-gradient(at 0% 100%, rgba(31, 61, 43, 0.08) 0px, transparent 60vw);  /* Deep Green bottom-left */
+  background-attachment: fixed; /* Keeps the glowing orbs in place while scrolling */
 }
 
 /* Headings use Poppins */
