@@ -58,11 +58,12 @@
           />
           <span id="email-hint" class="form-hint" style="display: block; margin-bottom: 1rem; font-size: 0.85rem; color: #475569;">I will use this to get back to you.</span>
 
-          <label for="phone">Phone Number: <span style="color: #475569; font-weight: normal;">(optional)</span></label>
+          <label for="phone">Phone Number: <span style="color: #b91c1c;">*</span></label>
           <input 
             type="tel" 
             id="phone" 
             name="phone" 
+            required
             placeholder="+27 76 379 0913" 
             pattern="[+]?[0-9\s\-]{7,15}" 
             autocomplete="tel" 
@@ -79,7 +80,7 @@
           </select>
 
           <fieldset style="margin-bottom: 1.25rem;">
-            <legend>Preferred Contact Method:</legend>
+            <legend>Preferred Contact Method: <span style="color: #b91c1c;">*</span></legend>
             <label for="contact-email">
               <input
                 type="radio"
@@ -96,6 +97,7 @@
                 id="contact-phone"
                 name="contact-method"
                 value="phone"
+                required
               />
               Phone
             </label>
@@ -118,5 +120,22 @@
     <footer>
       <p>Contact me at ntando.molose@umuzi.org</p>
     </footer>
+
+    <!-- Small JS to handle form submission -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function(event) {
+          event.preventDefault(); // Stops the page from reloading/erroring
+          
+          // Show the success pop-up
+          alert("Success! Your message has been sent to Ntando.");
+          
+          // Clear the form fields so it is ready for a new message
+          form.reset();
+        });
+      });
+    </script>
   </body>
 </html>
