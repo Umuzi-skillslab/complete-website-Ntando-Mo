@@ -586,3 +586,47 @@ footer a:hover {
   z-index: 0;
   white-space: pre;
 }
+
+/* =========================================
+   MOBILE RESPONSIVENESS FIXES
+   ========================================= */
+@media (max-width: 768px) {
+  /* 1. Stack the header vertically */
+  .modern-header {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  /* 2. Center the links and let them wrap if needed */
+  .modern-header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* 3. Center the hero text and buttons for mobile */
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-actions, 
+  .hero-socials {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* 4. Hide the background code accent to keep tiny screens readable */
+  .signature-accent {
+    display: none;
+  }
+
+  /* 5. Ensure the profile card fits perfectly */
+  .live-profile-card {
+    padding: 25px 20px;
+  }
+  
+  .skill-name {
+    width: 80px; /* Slightly narrower text label for mobile */
+  }
+}
