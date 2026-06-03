@@ -3,21 +3,20 @@
    ========================================= */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap");
 
-
 /* =========================================
    Theme Variables (Color Palette) & Fluid Type
    ========================================= */
 :root {
   --primary: #1f3d2b; /* Deep Green */
-  --accent: #c2a878;  /* Soft Gold */
-  --bg: #f9faf8;      /* Off-white */
-  --text: #2a2a2a;    /* Dark Gray */
+  --accent: #c2a878; /* Soft Gold */
+  --bg: #f9faf8; /* Off-white */
+  --text: #2a2a2a; /* Dark Gray */
   --white: #ffffff;
-  
+
   /* Fluid typography: clamp(minimum, preferred, maximum) */
-  --step-0: clamp(1.00rem, 0.96rem + 0.22vw, 1.13rem); /* Normal text */
-  --step-1: clamp(1.25rem, 1.16rem + 0.43vw, 1.50rem); /* h4 & Hero P */
-  --step-2: clamp(1.56rem, 1.41rem + 0.76vw, 2.00rem); /* h3 */
+  --step-0: clamp(1rem, 0.96rem + 0.22vw, 1.13rem); /* Normal text */
+  --step-1: clamp(1.25rem, 1.16rem + 0.43vw, 1.5rem); /* h4 & Hero P */
+  --step-2: clamp(1.56rem, 1.41rem + 0.76vw, 2rem); /* h3 */
   --step-3: clamp(1.95rem, 1.71rem + 1.24vw, 2.66rem); /* h2 */
   --step-4: clamp(2.44rem, 2.05rem + 1.93vw, 3.55rem); /* h1 */
 }
@@ -25,7 +24,9 @@
 /* =========================================
    Universal Reset
    ========================================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -40,18 +41,28 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.8;
-  
+
   /* NEW: Ambient Glow / Mesh Gradient Background */
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(194, 168, 120, 0.15) 0px, transparent 60vw), /* Soft Gold top-left */
-    radial-gradient(at 100% 0%, rgba(31, 61, 43, 0.08) 0px, transparent 60vw),  /* Deep Green top-right */
-    radial-gradient(at 100% 100%, rgba(194, 168, 120, 0.15) 0px, transparent 60vw), /* Soft Gold bottom-right */
-    radial-gradient(at 0% 100%, rgba(31, 61, 43, 0.08) 0px, transparent 60vw);  /* Deep Green bottom-left */
+  background-image:
+    radial-gradient(at 0% 0%, rgba(194, 168, 120, 0.15) 0px, transparent 60vw),
+    /* Soft Gold top-left */
+    radial-gradient(at 100% 0%, rgba(31, 61, 43, 0.08) 0px, transparent 60vw),
+    /* Deep Green top-right */
+    radial-gradient(
+        at 100% 100%,
+        rgba(194, 168, 120, 0.15) 0px,
+        transparent 60vw
+      ),
+    /* Soft Gold bottom-right */
+    radial-gradient(at 0% 100%, rgba(31, 61, 43, 0.08) 0px, transparent 60vw); /* Deep Green bottom-left */
   background-attachment: fixed; /* Keeps the glowing orbs in place while scrolling */
 }
 
 /* Headings use Poppins */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Poppins", sans-serif;
   color: var(--primary);
   margin-top: 0;
@@ -62,10 +73,18 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
-h1 { font-size: var(--step-4); }
-h2 { font-size: var(--step-3); }
-h3 { font-size: var(--step-2); }
-h4 { font-size: var(--step-1); }
+h1 {
+  font-size: var(--step-4);
+}
+h2 {
+  font-size: var(--step-3);
+}
+h3 {
+  font-size: var(--step-2);
+}
+h4 {
+  font-size: var(--step-1);
+}
 
 /* Adds specific spacing ONLY when a paragraph directly follows an h2 */
 h2 + p {
@@ -106,8 +125,8 @@ h2 + p {
   justify-content: space-between;
   align-items: center;
   padding: 30px 50px;
-  background-color: var(--primary); 
-  border-bottom: 4px solid var(--accent); 
+  background-color: var(--primary);
+  border-bottom: 4px solid var(--accent);
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensures it stays on top of all other content */
@@ -121,7 +140,7 @@ h2 + p {
   letter-spacing: -0.5px;
 
   /*Removes the default link underline */
-  text-decoration: none; 
+  text-decoration: none;
   transition: opacity 0.3s ease;
 }
 
@@ -153,7 +172,7 @@ h2 + p {
 }
 
 .modern-header nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 3px;
@@ -187,7 +206,13 @@ main {
 }
 
 /* Base styling for all content blocks */
-.hero, .intro, .bio, .skills, .profile-photo, .contact-form, .project-card {
+.hero,
+.intro,
+.bio,
+.skills,
+.profile-photo,
+.contact-form,
+.project-card {
   background-color: var(--white);
   padding: 50px;
   border-radius: 12px;
@@ -202,7 +227,12 @@ main {
 
 /* Desktop Grid Adjustments */
 @media (min-width: 768px) {
-  .hero, .intro, .bio, .skills, .profile-photo, .contact-form {
+  .hero,
+  .intro,
+  .bio,
+  .skills,
+  .profile-photo,
+  .contact-form {
     grid-column: 2 / 12; /* Widened to match the new Hero layout! */
   }
 
@@ -274,7 +304,8 @@ main {
     text-align: center;
     gap: 30px;
   }
-  .hero-text, .hero-visual {
+  .hero-text,
+  .hero-visual {
     width: 100%;
   }
   .modern-hero p {
@@ -300,7 +331,8 @@ table {
   margin-top: 25px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #eaeaea;
   padding: 16px;
   text-align: left;
@@ -399,15 +431,18 @@ button:hover {
    Project Card Hover Effects
    ========================================= */
 .project-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-  border: 1px solid transparent; 
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  border: 1px solid transparent;
 }
 
 .project-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 25px 50px rgba(31, 61, 43, 0.15);
   border-color: var(--accent);
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .project-card img {
@@ -429,8 +464,9 @@ footer {
   margin-top: 80px;
 }
 
-footer p, footer a {
-  color: #ffffff; 
+footer p,
+footer a {
+  color: #ffffff;
   font-size: 1rem;
 }
 
@@ -467,7 +503,9 @@ footer a:hover {
   font-weight: 600;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: inline-block;
 }
 
@@ -498,7 +536,9 @@ footer a:hover {
 .hero-socials a {
   color: var(--text);
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
   display: inline-block;
 }
 
@@ -517,7 +557,9 @@ footer a:hover {
   color: var(--white);
   box-shadow: 0 20px 40px rgba(31, 61, 43, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .live-profile-card:hover {
@@ -531,7 +573,7 @@ footer a:hover {
   padding-bottom: 15px;
 }
 
-.card-header h3 {
+.card-header h2 {
   color: var(--white);
   margin: 0 0 5px 0;
   font-size: 1.8rem;
@@ -610,7 +652,7 @@ footer a:hover {
     text-align: center;
   }
 
-  .hero-actions, 
+  .hero-actions,
   .hero-socials {
     justify-content: center;
     flex-wrap: wrap;
@@ -625,7 +667,7 @@ footer a:hover {
   .live-profile-card {
     padding: 25px 20px;
   }
-  
+
   .skill-name {
     width: 80px; /* Slightly narrower text label for mobile */
   }
@@ -671,7 +713,7 @@ img.project-image {
 }
 
 /* Tighter, neater project titles */
-.project-content h3 {
+.project-content h2 {
   font-size: 1.4rem;
   line-height: 1.3;
   margin-bottom: 15px;

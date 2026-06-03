@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <header class="modern-header">
       <a href="index.html" class="logo">Ntando<span>.</span></a>
       <nav>
@@ -16,14 +16,18 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+          <li>
+            <a href="contact.html" class="active" aria-current="page"
+              >Contact</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
     <main id="main-content">
       <section class="contact-form">
-        <h2>Get In Touch</h2>
+        <h1>Get In Touch</h1>
 
         <form action="#" method="POST">
           <label for="name"
@@ -38,7 +42,7 @@
             placeholder="Your Name"
             autocomplete="name"
             aria-describedby="name-hint"
-          />
+          >
           <span
             id="name-hint"
             class="form-hint"
@@ -63,7 +67,7 @@
             placeholder="Your Email"
             autocomplete="email"
             aria-describedby="email-hint"
-          />
+          >
           <span
             id="email-hint"
             class="form-hint"
@@ -88,7 +92,7 @@
             pattern="[+]?[0-9\s\-]{7,15}"
             autocomplete="tel"
             aria-describedby="phone-hint"
-          />
+          >
           <span
             id="phone-hint"
             class="form-hint"
@@ -122,7 +126,7 @@
                 name="contact-method"
                 value="email"
                 required
-              />
+              >
               Email
             </label>
             <label for="contact-phone">
@@ -132,7 +136,7 @@
                 name="contact-method"
                 value="phone"
                 required
-              />
+              >
               Phone
             </label>
           </fieldset>
@@ -157,7 +161,6 @@
       <p>Contact me at ntando.molose@umuzi.org</p>
     </footer>
 
-    <!-- Small JS to handle form submission -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const form = document.querySelector("form");
