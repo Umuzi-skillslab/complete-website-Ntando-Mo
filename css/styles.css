@@ -593,6 +593,15 @@ footer a:hover {
   transform: translateY(-5px);
   box-shadow: 0 25px 50px rgba(31, 61, 43, 0.3);
 }
+.skill-percent {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-left: 15px;
+  font-weight: 700;
+  width: 35px; /* Keeps all the numbers perfectly aligned in a column */
+  text-align: right;
+}
 
 .card-header {
   margin-bottom: 25px;
