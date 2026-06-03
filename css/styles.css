@@ -9,14 +9,14 @@
    ========================================= */
 :root {
   --primary: #1f3d2b; /* Deep Green */
-  --accent: #c2a878; /* Soft Gold */
-  --bg: #f9faf8; /* Off-white */
-  --text: #2a2a2a; /* Dark Gray */
+  --accent: #c2a878;  /* Soft Gold */
+  --bg: #f9faf8;      /* Off-white */
+  --text: #2a2a2a;    /* Dark Gray */
   --white: #ffffff;
   
   /* Fluid typography: clamp(minimum, preferred, maximum) */
   --step-0: clamp(1.00rem, 0.96rem + 0.22vw, 1.13rem); /* Normal text */
-  --step-1: clamp(1.25rem, 1.16rem + 0.43vw, 1.50rem); /* h4 */
+  --step-1: clamp(1.25rem, 1.16rem + 0.43vw, 1.50rem); /* h4 & Hero P */
   --step-2: clamp(1.56rem, 1.41rem + 0.76vw, 2.00rem); /* h3 */
   --step-3: clamp(1.95rem, 1.71rem + 1.24vw, 2.66rem); /* h2 */
   --step-4: clamp(2.44rem, 2.05rem + 1.93vw, 3.55rem); /* h1 */
@@ -32,7 +32,6 @@
 /* =========================================
    Global Styles & Element Selectors 
    ========================================= */
-
 body {
   font-family: "Inter", sans-serif;
   font-size: var(--step-0);
@@ -44,10 +43,7 @@ body {
 }
 
 /* Headings use Poppins */
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: "Poppins", sans-serif;
   color: var(--primary);
   margin-top: 0;
@@ -95,71 +91,83 @@ h2 + p {
 }
 
 /* =========================================
-   Header & Navigation (Class & Descendant)
+   Header & Navigation (Modern Green)
    ========================================= */
-header {
-  background-color: var(--primary);
-  color: var(--bg);
-  padding: 40px 20px;
-  text-align: center;
-  border-bottom: 6px solid var(--accent);
+.modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  background-color: var(--primary); /* Deep Green Background */
+  border-bottom: 4px solid var(--accent); /* Sleek Gold Line */
 }
 
-header h1 {
-  color: var(--bg);
-  font-size: 2.8rem;
-  letter-spacing: 0.5px;
+.modern-header .logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white); /* White text to pop on green */
+  letter-spacing: -0.5px;
 }
 
-header nav ul {
-  list-style-type: none;
+.modern-header .logo span {
+  color: var(--accent);
+}
+
+.modern-header nav ul {
+  list-style: none;
   padding: 0;
-  margin: 25px 0 0 0;
+  margin: 0;
+  display: flex;
+  gap: 35px;
 }
 
-header nav ul li {
-  display: inline-block;
-  margin: 0 20px;
-}
-
-header nav ul li a {
-  color: var(--bg);
+.modern-header nav ul li a {
+  color: var(--white); /* White links */
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Included the .active class so the current page is visually highlighted! */
-header nav ul li a:hover,
-header nav ul li a.active {
+.modern-header nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
   background-color: var(--accent);
-  color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.modern-header nav ul li a:hover::after,
+.modern-header nav ul li a.active::after {
+  width: 100%;
+}
+
+.modern-header nav ul li a:hover,
+.modern-header nav ul li a.active {
+  color: var(--accent); /* Turn gold on hover/active */
+  background-color: transparent;
 }
 
 /* =========================================
    12-Column Grid Layout System
    ========================================= */
-/* Applying the grid to the main wrapper with max-width */
 main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 30px;
   max-width: 1150px;
-  margin: 80px auto;
+  margin: 40px auto 80px auto; /* Reduced top margin to remove excess white space */
   padding: 0 20px;
 }
 
 /* Base styling for all content blocks */
-.hero,
-.intro,
-.bio,
-.skills,
-.profile-photo,
-.contact-form,
-.project-card {
+.hero, .intro, .bio, .skills, .profile-photo, .contact-form, .project-card {
   background-color: var(--white);
   padding: 50px;
   border-radius: 12px;
@@ -167,7 +175,6 @@ main {
   grid-column: span 12; /* Default to full width on mobile */
 }
 
-/* Advanced Selector: :not() */
 /* Adds a bottom margin to all project cards EXCEPT the last one */
 .project-card:not(:last-child) {
   margin-bottom: 2.5rem;
@@ -175,22 +182,81 @@ main {
 
 /* Desktop Grid Adjustments */
 @media (min-width: 768px) {
-  /* Center single-column sections with heavy whitespace on the sides (spans 8 columns) */
-  .hero,
-  .intro,
-  .bio,
-  .skills,
-  .profile-photo,
-  .contact-form {
+  .hero, .intro, .bio, .skills, .profile-photo, .contact-form {
     grid-column: 3 / 11;
   }
 
-  /* Project cards span exactly 4 columns each, creating a perfect 3-column row */
   .project-card {
     grid-column: span 4;
     padding: 30px;
     display: flex;
     flex-direction: column;
+  }
+}
+
+/* =========================================
+   Modern Split Hero Layout
+   ========================================= */
+.hero.modern-hero {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  grid-column: 2 / 12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-visual {
+  flex: 1;
+}
+
+.code-label {
+  font-family: monospace;
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.modern-hero h2 {
+  font-size: var(--step-4);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.modern-hero p {
+  font-size: var(--step-1);
+  color: #555;
+  max-width: 90%;
+}
+
+.modern-hero img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(31, 61, 43, 0.15);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .hero.modern-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .hero-text, .hero-visual {
+    width: 100%;
+  }
+  .modern-hero p {
+    margin: 0 auto;
   }
 }
 
@@ -206,15 +272,13 @@ img {
 /* =========================================
    Table Styling
    ========================================= */
-
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 25px;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #eaeaea;
   padding: 16px;
   text-align: left;
@@ -228,13 +292,12 @@ th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: rgba(194, 168, 120, 0.1); /* Very subtle Soft Gold tint */
+  background-color: rgba(194, 168, 120, 0.1);
 }
 
 /* =========================================
    Form Styling
    ========================================= */
-
 form label {
   display: block;
   font-weight: 600;
@@ -269,7 +332,7 @@ form select:focus,
 form textarea:focus {
   border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1); /* Soft green glow */
+  box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1);
 }
 
 form textarea {
@@ -291,7 +354,6 @@ legend {
   padding: 0 10px;
 }
 
-/* Button styling using theme colours */
 button {
   background-color: var(--primary);
   color: var(--bg);
@@ -314,20 +376,16 @@ button:hover {
 /* =========================================
    Project Card Hover Effects
    ========================================= */
-/* Give the cards a smooth transition speed */
 .project-card {
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
-  border: 1px solid transparent; /* Prepares the border for the hover state */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  border: 1px solid transparent; 
 }
 
 .project-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 25px 50px rgba(31, 61, 43, 0.15);
   border-color: var(--accent);
-  cursor: pointer; /* Changes the mouse to a pointing hand */
+  cursor: pointer; 
 }
 
 .project-card img {
@@ -335,7 +393,7 @@ button:hover {
 }
 
 .project-card:hover img {
-  transform: scale(1.03); /* Zooms the image in by 3% */
+  transform: scale(1.03);
 }
 
 /* =========================================
@@ -349,9 +407,7 @@ footer {
   margin-top: 80px;
 }
 
-/* This forces the paragraph and link inside the footer to be white */
-footer p, 
-footer a {
+footer p, footer a {
   color: #ffffff; 
   font-size: 1rem;
 }
