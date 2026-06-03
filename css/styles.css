@@ -630,3 +630,72 @@ footer a:hover {
     width: 80px; /* Slightly narrower text label for mobile */
   }
 }
+
+/* =========================================
+   PREMIUM PROJECT CARD UPGRADES
+   ========================================= */
+/* Resets the card to allow edge-to-edge images */
+.project-card {
+  padding: 0 !important; /* Overrides the generic section padding */
+  overflow: hidden; /* Ensures the image doesn't break the rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forces every single image to be the exact same perfect size */
+img.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Perfect widescreen rectangle */
+  object-fit: cover; /* Zooms and crops automatically without stretching */
+  margin: 0;
+  border-radius: 12px 12px 0 0; /* Rounds only the top corners */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Styles the text container */
+.project-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Tells the content to fill all remaining space */
+}
+
+/* The small category tag */
+.project-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+/* Tighter, neater project titles */
+.project-content h3 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* Muted, highly readable descriptions */
+.project-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Pushes the "View Project" link to the absolute bottom! */
+}
+
+/* Sleek View Project link */
+.project-link {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
