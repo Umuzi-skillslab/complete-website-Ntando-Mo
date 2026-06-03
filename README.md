@@ -99,6 +99,16 @@ To solve this, I realized I couldn't just patch the CSS; I needed to systematica
 **Home Page Transformation:**
 ![Before and After Comparison](./screenshots/before-after.png)
 
+### 4. HTML W3C Validation
+
+**Validation for all HTML pages:**
+![W3C HTML validation](./screenshots/html-validator.png)
+
+### 5. HTML W3C Validation
+
+**Validation for CSS file:**
+![W3C CSS validation](./screenshots/css-validator.png)
+
 ## How to View Locally
 
 To test and view this project on your local machine, follow these steps:
