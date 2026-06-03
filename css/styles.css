@@ -233,6 +233,7 @@ main {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
   grid-column: span 12; /* Default to full width on mobile */
+  height: 100%;
 }
 
 /* Adds a bottom margin to all project cards EXCEPT the last one */
