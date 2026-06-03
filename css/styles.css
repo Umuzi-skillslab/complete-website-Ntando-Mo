@@ -3,8 +3,9 @@
    ========================================= */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap");
 
+
 /* =========================================
-   Theme Variables (Color Palette)
+   Theme Variables (Color Palette) & Fluid Type
    ========================================= */
 :root {
   --primary: #1f3d2b; /* Deep Green */
@@ -12,15 +13,29 @@
   --bg: #f9faf8; /* Off-white */
   --text: #2a2a2a; /* Dark Gray */
   --white: #ffffff;
+  
+  /* Fluid typography: clamp(minimum, preferred, maximum) */
+  --step-0: clamp(1.00rem, 0.96rem + 0.22vw, 1.13rem); /* Normal text */
+  --step-1: clamp(1.25rem, 1.16rem + 0.43vw, 1.50rem); /* h4 */
+  --step-2: clamp(1.56rem, 1.41rem + 0.76vw, 2.00rem); /* h3 */
+  --step-3: clamp(1.95rem, 1.71rem + 1.24vw, 2.66rem); /* h2 */
+  --step-4: clamp(2.44rem, 2.05rem + 1.93vw, 3.55rem); /* h1 */
 }
 
 /* =========================================
-   Global Styles & Element Selectors (1)
+   Universal Reset
    ========================================= */
-/* REQUIREMENT MET: Element selector used ('body') */
-/* REQUIREMENT MET: 0 colour contrast failures */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Global Styles & Element Selectors 
+   ========================================= */
+
 body {
   font-family: "Inter", sans-serif;
+  font-size: var(--step-0);
   background-color: var(--bg);
   color: var(--text);
   margin: 0;
@@ -36,6 +51,47 @@ h4 {
   font-family: "Poppins", sans-serif;
   color: var(--primary);
   margin-top: 0;
+}
+
+/* Advanced Selector: :is() for explicit type scale */
+:is(h1, h2, h3, h4) {
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-2); }
+h4 { font-size: var(--step-1); }
+
+/* Adds specific spacing ONLY when a paragraph directly follows an h2 */
+h2 + p {
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   Accessibility & Skip Link
+   ========================================= */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: var(--accent);
+  color: #1a1a1a;
+  padding: 10px 15px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-weight: bold;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+/* Creates a highly visible outline only for keyboard users, not mouse clickers */
+:focus-visible {
+  outline: 3px dashed var(--accent);
+  outline-offset: 4px;
 }
 
 /* =========================================
@@ -76,7 +132,9 @@ header nav ul li a {
   transition: all 0.3s ease;
 }
 
-header nav ul li a:hover {
+/* Included the .active class so the current page is visually highlighted! */
+header nav ul li a:hover,
+header nav ul li a.active {
   background-color: var(--accent);
   color: var(--primary);
 }
@@ -107,6 +165,12 @@ main {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
   grid-column: span 12; /* Default to full width on mobile */
+}
+
+/* Advanced Selector: :not() */
+/* Adds a bottom margin to all project cards EXCEPT the last one */
+.project-card:not(:last-child) {
+  margin-bottom: 2.5rem;
 }
 
 /* Desktop Grid Adjustments */
@@ -184,6 +248,7 @@ form label {
 
 form input[type="text"],
 form input[type="email"],
+form input[type="tel"],
 form select,
 form textarea {
   width: 100%;
@@ -191,7 +256,6 @@ form textarea {
   margin-top: 8px;
   border: 1px solid #cccccc;
   border-radius: 6px;
-  box-sizing: border-box;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   background-color: var(--bg);
@@ -200,6 +264,7 @@ form textarea {
 
 form input[type="text"]:focus,
 form input[type="email"]:focus,
+form input[type="tel"]:focus,
 form select:focus,
 form textarea:focus {
   border-color: var(--primary);
@@ -282,4 +347,16 @@ footer {
   padding: 40px 20px;
   text-align: center;
   margin-top: 80px;
+}
+
+/* This forces the paragraph and link inside the footer to be white */
+footer p, 
+footer a {
+  color: #ffffff; 
+  font-size: 1rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--accent);
 }
