@@ -191,7 +191,7 @@ main {
 /* Desktop Grid Adjustments */
 @media (min-width: 768px) {
   .hero, .intro, .bio, .skills, .profile-photo, .contact-form {
-    grid-column: 3 / 11;
+    grid-column: 2 / 12; /* Widened to match the new Hero layout! */
   }
 
   .project-card {
@@ -218,12 +218,14 @@ main {
 }
 
 .hero-text {
-  flex: 1;
+  flex: 1.5; /* 60% of the space */
   text-align: left;
+  z-index: 2; /* Keeps text above the background accent */
 }
 
 .hero-visual {
-  flex: 1;
+  flex: 1; /* 40% of the space */
+  z-index: 2;
 }
 
 .code-label {
@@ -423,4 +425,152 @@ footer p, footer a {
 footer a:hover {
   text-decoration: underline;
   color: var(--accent);
+}
+
+/* =========================================
+   PREMIUM HERO UPGRADES (Typography, CTAs, Marquee)
+   ========================================= */
+
+/* The new hierarchy tag above the headline */
+.hero-tag {
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+/* Call to Action Buttons */
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02); /* Premium micro-interaction */
+  box-shadow: 0 10px 20px rgba(31, 61, 43, 0.15);
+}
+
+.btn.primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* Social Links */
+.hero-socials {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-socials a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.hero-socials a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   THE LIVE PROFILE CARD
+   ========================================= */
+.live-profile-card {
+  background-color: var(--primary);
+  border-radius: 16px;
+  padding: 35px 30px;
+  color: var(--white);
+  box-shadow: 0 20px 40px rgba(31, 61, 43, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.live-profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(31, 61, 43, 0.3);
+}
+
+.card-header {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.card-header h3 {
+  color: var(--white);
+  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+}
+
+.card-header p {
+  color: var(--accent);
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  width: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bg);
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+/* =========================================
+   SIGNATURE ACCENT (Background Code)
+   ========================================= */
+.signature-accent {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  font-family: monospace;
+  font-size: 2rem;
+  color: var(--primary);
+  opacity: 0.03; /* Barely visible */
+  pointer-events: none; /* Stops it from interfering with clicks */
+  z-index: 0;
+  white-space: pre;
 }
