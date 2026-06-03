@@ -30,6 +30,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* =========================================
    Global Styles & Element Selectors 
    ========================================= */
@@ -341,6 +345,13 @@ th {
 
 tbody tr:nth-child(even) {
   background-color: rgba(194, 168, 120, 0.1);
+}
+
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+tbody tr:hover {
+  background-color: rgba(194, 168, 120, 0.25); /* Highlights the row with soft gold */
 }
 
 /* =========================================
@@ -734,4 +745,20 @@ img.project-image {
 
 .project-link:hover {
   color: var(--accent);
+}
+
+/* Custom Branded Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg); 
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary); 
+  border-radius: 10px;
+  border: 3px solid var(--bg); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent); 
 }
