@@ -106,8 +106,11 @@ h2 + p {
   justify-content: space-between;
   align-items: center;
   padding: 30px 50px;
-  background-color: var(--primary); /* Deep Green Background */
-  border-bottom: 4px solid var(--accent); /* Sleek Gold Line */
+  background-color: var(--primary); 
+  border-bottom: 4px solid var(--accent); 
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top of all other content */
 }
 
 .modern-header .logo {
@@ -116,10 +119,19 @@ h2 + p {
   font-weight: 700;
   color: var(--white); /* White text to pop on green */
   letter-spacing: -0.5px;
+
+  /*Removes the default link underline */
+  text-decoration: none; 
+  transition: opacity 0.3s ease;
 }
 
 .modern-header .logo span {
   color: var(--accent);
+}
+
+/*Adds a subtle fade effect when they hover over your logo */
+.modern-header .logo:hover {
+  opacity: 0.8;
 }
 
 .modern-header nav ul {
