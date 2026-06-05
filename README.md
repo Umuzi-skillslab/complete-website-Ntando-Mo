@@ -85,6 +85,7 @@ To solve this, I realized I couldn't just patch the CSS; I needed to systematica
 ### 2. Specific Component Improvements
 
 **HTML Form (Showing Input Variety & Alignment):**
+
 ![Contact Form](./screenshots/form.png)
 
 **Styled Data Table (Showing Zebra Striping):**
