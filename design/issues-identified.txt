@@ -1,0 +1,44 @@
+Issues Identified & Fixes Implemented
+
+HTML Structure & Semantic Errors
+Missing Metadata: The html files were missing essential document metadata, 
+which I fixed by adding lang="en", <meta charset="UTF-8">, 
+and viewport tags for responsiveness.
+
+Improper <div> Usage: All pages relied heavily on generic <div> elements. 
+I replaced these with semantic HTML5 tags including <header>, <main>, <section>, <nav>, and <footer> 
+to fix the document structure.
+
+Missing Global Navigation: The navigation menu was entirely absent from the starter code. 
+I created a consistent <nav> block with an unordered list linking to all four pages.
+
+Missing Image Accessibility: None of the images in the starter code had alt attributes. 
+I added descriptive alt text to the hero, profile, and all three project images to fix this accessibility failure.
+
+Missing Data Table: The about.html page was missing a table entirely. 
+I built a new table with proper <thead>, <tbody>, <th>, and <td> structure to display technical skills.
+
+Incomplete Contact Form: The form in contact.html was missing labels. 
+I linked <label> tags to all inputs, expanded the form to include 5 distinct 
+input types (text, email, select, radio, textarea) , and added HTML5 client-side 
+validation (required, minlength, pattern).
+
+CSS Styling & Code Quality Errors
+Limited Selector Variety: The starter CSS only used basic element and class selectors. 
+I expanded this by adding an ID selector (#name), descendant selectors (header nav ul), 
+and pseudo-classes (:hover, :focus).
+
+Color Contrast Failures: The original code placed light text on light backgrounds. 
+I resolved this by implementing a high-contrast Deep Green and Off-White color scheme 
+that easily passes accessibility standards.
+
+Alignment & Spacing Issues: The footer was incorrectly left-aligned, 
+and sections lacked breathing room. 
+I utilized margin and padding to demonstrate the box model , 
+centered the footer, and implemented a 12-column CSS Grid to create a responsive, modern layout.
+
+Missing Interactive Styles: The navigation menu and buttons lacked visual feedback. 
+I added background color transitions and :hover effects to improve interactivity.
+
+Missing Table & Form Styling: Forms lacked visual hierarchy and tables were unstyled. 
+I added full-width input styling, border-collapse for the table, and alternating row colors using :nth-child(even).

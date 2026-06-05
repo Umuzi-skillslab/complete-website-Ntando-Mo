@@ -1,28 +1,176 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Portfolio</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ntando | Web Developer & Data Analyst</title>
+    <meta name="title" content="Ntando | Web Developer & Data Analyst">
+    <meta name="description" content="Portfolio of Ntando, a front-end developer and data scientist based in South Africa specializing in responsive web applications and actionable data insights.">
+    <meta name="author" content="Ntando">
+
+    <!-- SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo">
+    <meta property="og:title" content="Ntando | Web Developer & Data Analyst">
+    <meta property="og:description" content="Portfolio of Ntando, a front-end developer and data scientist based in South Africa specializing in responsive web applications and actionable data insights.">
+    <meta property="og:image" content="images/og-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo">
+    <meta property="twitter:title" content="Ntando | Web Developer & Data Analyst">
+    <meta property="twitter:description" content="Portfolio of Ntando, a front-end developer and data scientist based in South Africa specializing in responsive web applications and actionable data insights.">
+    <meta property="twitter:image" content="images/og-preview.png">
+
+    <meta name="theme-color" content="#1f3d2b">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div class="header">
-        <h1>My Portfolio</h1>
-        <!-- Navigation missing -->
-    </div>
-    
-    <div class="hero">
-        <h2>Welcome to My Portfolio</h2>
-        <p>I am a web developer passionate about creating beautiful websites.</p>
-        <img src="images/hero.jpg">
-    </div>
-    
-    <div class="intro">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  </head>
+  
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="modern-header">
+      <a href="index.html" class="logo">Ntando<span>.</span></a>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" class="active" aria-current="page">Home</a>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!-- Soft signature background -->
+      <div class="signature-accent" aria-hidden="true">
+        const portfolio = { role: "Developer", passion: "Data" };
+      </div>
+
+      <section class="hero modern-hero">
+        <div class="hero-text">
+          <p class="hero-tag">Web Developer & Data Analyst</p>
+          <h1>
+            Building digital experiences.
+            Turning data into decisions.
+          </h1>
+          <p>
+            I am a front-end developer and data scientist based in South Africa.
+            I specialize in crafting responsive applications and transforming
+            complex datasets into actionable intelligence.
+          </p>
+
+          <div class="hero-actions">
+            <a href="projects.html" class="btn primary">View My Work</a>
+            <a href="contact.html" class="btn secondary">Contact Me</a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/Ntando-Mo" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://linkedin.com/in/ntando-molose" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://wa.me/27673390002" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Contact">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:ntando.molose@umuzi.org" aria-label="Email Me">
+              <i class="fa-solid fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="live-profile-card">
+            <img src="images/working.png" alt="Ntando working at a desk" class="card-avatar">
+            <div class="card-header">
+              <h2>Ntando.</h2>
+              <p>Core Stack</p>
+            </div>
+            <div class="card-skills">
+              <div class="skill">
+                <span class="skill-name">HTML</span>
+                <div class="bar">
+                  <div class="fill" style="width: 90%"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill">
+                <span class="skill-name">CSS</span>
+                <div class="bar">
+                  <div class="fill" style="width: 85%"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill">
+                <span class="skill-name">JavaScript</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill">
+                <span class="skill-name">React</span>
+                <div class="bar">
+                  <div class="fill" style="width: 85%"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill">
+                <span class="skill-name">Python</span>
+                <div class="bar">
+                  <div class="fill" style="width: 90%"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill">
+                <span class="skill-name">SQL</span>
+                <div class="bar">
+                  <div class="fill" style="width: 88%"></div>
+                </div>
+                <span class="skill-percent">88%</span>
+              </div>
+              <div class="skill">
+                <span class="skill-name">Power BI</span>
+                <div class="bar">
+                  <div class="fill" style="width: 80%"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro">
         <h2>About Me</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    
-    <div class="footer">
-        <p>Contact me at email@example.com</p>
-    </div>
-</body>
+        <p>
+          I’m a tech professional with a background in data science and a
+          growing focus on web development. I graduated from the ALX Data
+          Science program, where I built skills in Python, SQL, and data
+          analysis. I’m currently training in web development at Umuzi and BBD,
+          gaining hands-on experience building responsive, user-friendly
+          applications. I enjoy turning ideas and data into meaningful digital
+          solutions. I also bring strong leadership and collaboration skills
+          from my role as an SGD lead, where I support and guide other learners.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Get in touch: <a href="mailto:ntando.molose@umuzi.org">ntando.molose@umuzi.org</a></p>
+      <p>&copy; 2026 Ntando. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

@@ -1,30 +1,120 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Projects</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Projects | Ntando</title>
+    <meta name="title" content="Projects | Ntando">
+    <meta name="description" content="Explore Ntando's portfolio of web development and data science projects, featuring responsive layouts and actionable data insights.">
+    <meta name="author" content="Ntando">
+
+    <!-- SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo/projects.html">
+    <meta property="og:title" content="Projects | Ntando">
+    <meta property="og:description" content="Explore Ntando's portfolio of web development and data science projects, featuring responsive layouts and actionable data insights.">
+    <meta property="og:image" content="images/og-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo/projects.html">
+    <meta property="twitter:title" content="Projects | Ntando">
+    <meta property="twitter:description" content="Explore Ntando's portfolio of web development and data science projects, featuring responsive layouts and actionable data insights.">
+    <meta property="twitter:image" content="images/og-preview.png">
+
+    <meta name="theme-color" content="#1f3d2b">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div class="header">
-        <h1>My Projects</h1>
-    </div>
-    
-    <div>
-        <h2>Project 1</h2>
-        <img src="images/project1.jpg">
-        <p>A responsive website built with HTML and CSS.</p>
-    </div>
-    
-    <div>
-        <h2>Project 2</h2>
-        <img src="images/project2.jpg">
-        <p>An e-commerce site with modern design.</p>
-    </div>
-    
-    <!-- Third project missing -->
-    
-    <div class="footer">
-        <p>Contact me at email@example.com</p>
-    </div>
-</body>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="modern-header">
+      <a href="index.html" class="logo">Ntando<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="projects.html" class="active" aria-current="page"
+              >Projects</a
+            >
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <h1 style="grid-column: 1 / -1; text-align: center; color: var(--primary); padding-top: 40px; margin-bottom: 10px;">
+        Featured Projects
+      </h1>
+
+      <article class="project-card">
+        <img
+          src="images/project1.png"
+          alt="Data visualization dashboard showing BMW vehicle sales trends"
+          class="project-image"
+        >
+        <div class="project-content">
+          <span class="project-tag">Data Analysis</span>
+          <h2>BMW Sales Data Analysis (2010-2024)</h2>
+          <p>
+            A comprehensive time-series analysis and exploratory data project
+            tracking automotive sales trends over 14 years using Python.
+          </p>
+          <a href="#" class="project-link">View Project &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img
+          src="images/project2.png"
+          alt="Homepage of the Lucky Shrub landscaping business website"
+          class="project-image"
+        >
+        <div class="project-content">
+          <span class="project-tag">Web Development</span>
+          <h2>Lucky Shrub Client Website</h2>
+          <p>
+            A responsive, modern website designed and coded with HTML and CSS
+            for a landscaping client.
+          </p>
+          <a href="#" class="project-link">View Project &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <img
+          src="images/project3.png"
+          alt="Design thinking framework and user journey map for a WesBank financial product pitch"
+          class="project-image"
+        >
+        <div class="project-content">
+          <span class="project-tag">Product Strategy</span>
+          <h2>WesBank Pay-As-You-Earn Design Pitch</h2>
+          <p>
+            A user-centered design thinking project and strategic pitch
+            proposing a tailored, Pay-As-You-Earn financial service. Features
+            granular user journey mapping, multi-stage storyboards, and an
+            analysis of business logistics to solve real-world accessibility
+            gaps.
+          </p>
+          <a href="#" class="project-link">View Project &rarr;</a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>Get in touch: <a href="mailto:ntando.molose@umuzi.org">ntando.molose@umuzi.org</a></p>
+      <p>&copy; 2026 Ntando. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

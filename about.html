@@ -1,30 +1,135 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>About | Ntando</title>
+    <meta name="title" content="About | Ntando">
+    <meta name="description" content="Learn more about Ntando's background in data science, web development, and journey through the ALX Data Science program.">
+    <meta name="author" content="Ntando">
+
+    <!-- SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo/about.html">
+    <meta property="og:title" content="About | Ntando">
+    <meta property="og:description" content="Learn more about Ntando's background in data science, web development, and journey through the BBD x Umuzi program.">
+    <meta property="og:image" content="images/og-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo/about.html">
+    <meta property="twitter:title" content="About | Ntando">
+    <meta property="twitter:description" content="Learn more about Ntando's background in data science, web development, and journey through the BBD x Umuzi program.">
+    <meta property="twitter:image" content="images/og-preview.png">
+
+    <meta name="theme-color" content="#1f3d2b">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
-<body>
-    <div class="header">
-        <h1>About Me</h1>
-    </div>
-    
-    <div>
-        <h2>My Background</h2>
-        <p>I have been working in web development for several years.</p>
-        
-        <h3>Skills</h3>
-        <!-- Table should be here but is missing -->
-        <p>HTML, CSS, JavaScript</p>
-    </div>
-    
-    <div>
-        <h3>My Photo</h3>
-        <img src="images/profile.jpg">
-    </div>
-    
-    <div class="footer">
-        <p>Contact me at email@example.com</p>
-    </div>
-</body>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="modern-header">
+      <a href="index.html" class="logo">Ntando<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="about.html" class="active" aria-current="page">About</a>
+          </li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="bio">
+        <h1>My Background</h1>
+        <p>
+          My journey into tech started with a curiosity about how data can be
+          used to solve real-world problems. This led me to pursue the ALX Data
+          Science program, where I built a solid foundation in Python, SQL, data
+          analysis, and machine learning through hands-on, project-based
+          learning.
+        </p>
+        <p>
+          Along the way, I discovered a growing interest in how users interact
+          with technology, which pushed me to expand into web development. I’m
+          currently training at Umuzi and BBD, where I’m gaining practical
+          experience in building responsive and user-focused web applications.
+        </p>
+        <p>
+          In addition to my technical journey, I’ve taken on leadership roles as
+          a Student Group Discussion (SGD) lead and deputy Salesforce squad
+          lead. These experiences have strengthened my communication, teamwork,
+          and mentorship skills, and shaped how I approach problem-solving
+          collaboratively and with impact.
+        </p>
+        <p>
+          Overall, my background reflects a blend of data, development, and
+          leadership, all driven by a desire to continuously learn and create
+          meaningful solutions.
+        </p>
+      </section>
+
+      <section class="skills">
+        <h2>Technical Skills</h2>
+
+        <table>
+          <caption>
+            Technical Skills: Domains, Technologies, and Platforms
+          </caption>
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Technologies & Platforms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data Analysis</td>
+              <td>Python, Pandas, NumPy, Jupyter Notebook</td>
+            </tr>
+            <tr>
+              <td>Data Visualization</td>
+              <td>Power BI, Matplotlib, Plotly</td>
+            </tr>
+            <tr>
+              <td>Web Development</td>
+              <td>HTML, CSS, JavaScript, React</td>
+            </tr>
+            <tr>
+              <td>Databases</td>
+              <td>SQL, SQLite</td>
+            </tr>
+            <tr>
+              <td>Tools & Platforms</td>
+              <td>Git, GitHub, AWS (Cloud Practitioner), Streamlit, Figma</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="profile-photo">
+        <h2>My Photo</h2>
+        <figure class="about-photo">
+          <img src="images/profile.png" alt="Professional headshot of Ntando">
+          <figcaption>
+            Ntando — Web Developer & Junior Data Scientist
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p>Get in touch: <a href="mailto:ntando.molose@umuzi.org">ntando.molose@umuzi.org</a></p>
+      <p>&copy; 2026 Ntando. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

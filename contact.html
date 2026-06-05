@@ -1,30 +1,208 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contact</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact | Ntando</title>
+    <meta name="title" content="Contact | Ntando">
+    <meta name="description" content="Get in touch with Ntando for collaboration on web development, data analysis, and professional opportunities.">
+    <meta name="author" content="Ntando">
+
+    <!-- SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo/contact.html">
+    <meta property="og:title" content="Contact | Ntando">
+    <meta property="og:description" content="Get in touch with Ntando for collaboration on web development, data analysis, and professional opportunities.">
+    <meta property="og:image" content="images/og-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/Umuzi-skillslab/complete-website-Ntando-Mo/contact.html">
+    <meta property="twitter:title" content="Contact | Ntando">
+    <meta property="twitter:description" content="Get in touch with Ntando for collaboration on web development, data analysis, and professional opportunities.">
+    <meta property="twitter:image" content="images/og-preview.png">
+
+    <meta name="theme-color" content="#1f3d2b">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
-<body>
-    <div class="header">
-        <h1>Contact Me</h1>
-    </div>
-    
-    <div>
-        <h2>Get In Touch</h2>
-        
-        <form>
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <textarea placeholder="Message"></textarea>
-            
-            <!-- Missing: labels, more input types, validation -->
-            
-            <button>Send</button>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="modern-header">
+      <a href="index.html" class="logo">Ntando<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li>
+            <a href="contact.html" class="active" aria-current="page"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="contact-form">
+        <h1>Get In Touch</h1>
+
+        <form action="#" method="POST">
+          <label for="name"
+            >Full Name: <span style="color: #b91c1c">*</span></label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            placeholder="Your Name"
+            autocomplete="name"
+            aria-describedby="name-hint"
+          >
+          <span
+            id="name-hint"
+            class="form-hint"
+            style="
+              display: block;
+              margin-bottom: 1rem;
+              font-size: 0.85rem;
+              color: #475569;
+            "
+            >Please enter your first and last name.</span
+          >
+
+          <label for="email"
+            >Email Address: <span style="color: #b91c1c">*</span></label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            placeholder="Your Email"
+            autocomplete="email"
+            aria-describedby="email-hint"
+          >
+          <span
+            id="email-hint"
+            class="form-hint"
+            style="
+              display: block;
+              margin-bottom: 1rem;
+              font-size: 0.85rem;
+              color: #475569;
+            "
+            >I will use this to get back to you.</span
+          >
+
+          <label for="phone"
+            >Phone Number: <span style="color: #b91c1c">*</span></label
+          >
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="+27 76 379 0913"
+            pattern="[+]?[0-9\s\-]{7,15}"
+            autocomplete="tel"
+            aria-describedby="phone-hint"
+          >
+          <span
+            id="phone-hint"
+            class="form-hint"
+            style="
+              display: block;
+              margin-bottom: 1rem;
+              font-size: 0.85rem;
+              color: #475569;
+            "
+            >Include your country code (e.g., +27).</span
+          >
+
+          <label for="inquiry"
+            >Nature of Inquiry: <span style="color: #b91c1c">*</span></label
+          >
+          <select id="inquiry" name="inquiry" required>
+            <option value="">Select a topic...</option>
+            <option value="webdev">Web Development</option>
+            <option value="data">Data Analysis</option>
+            <option value="other">Other</option>
+          </select>
+
+          <fieldset style="margin-bottom: 1.25rem">
+            <legend>
+              Preferred Contact Method: <span style="color: #b91c1c">*</span>
+            </legend>
+            <label for="contact-email">
+              <input
+                type="radio"
+                id="contact-email"
+                name="contact-method"
+                value="email"
+                required
+              >
+              Email
+            </label>
+            <label for="contact-phone">
+              <input
+                type="radio"
+                id="contact-phone"
+                name="contact-method"
+                value="phone"
+                required
+              >
+              Phone
+            </label>
+          </fieldset>
+
+          <label for="message"
+            >Message: <span style="color: #b91c1c">*</span></label
+          >
+          <textarea
+            id="message"
+            name="message"
+            required
+            minlength="10"
+            placeholder="How can I help you?"
+          ></textarea>
+
+          <button type="submit" style="margin-top: 1rem">Send Message</button>
         </form>
-    </div>
-    
-    <div class="footer">
-        <p>Contact me at email@example.com</p>
-    </div>
-</body>
+      </section>
+    </main>
+
+    <footer>
+      <p>Get in touch: <a href="mailto:ntando.molose@umuzi.org">ntando.molose@umuzi.org</a></p>
+      <p>&copy; 2026 Ntando. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Stops the page from reloading/erroring
+
+          // Show the success pop-up
+          alert("Success! Your message has been sent to Ntando.");
+
+          // Clear the form fields so it is ready for a new message
+          form.reset();
+        });
+      });
+    </script>
+  </body>
 </html>

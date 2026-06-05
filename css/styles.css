@@ -1,0 +1,842 @@
+/* =========================================
+   Google Fonts Import
+   ========================================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap");
+
+/* =========================================
+   Theme Variables (Color Palette) & Fluid Type
+   ========================================= */
+:root {
+  --primary: #1f3d2b; /* Deep Green */
+  --accent: #c2a878; /* Soft Gold */
+  --bg: #f9faf8; /* Off-white */
+  --text: #2a2a2a; /* Dark Gray */
+  --white: #ffffff;
+
+  /* Fluid typography: clamp(minimum, preferred, maximum) */
+  --step-0: clamp(1rem, 0.96rem + 0.22vw, 1.13rem); /* Normal text */
+  --step-1: clamp(1.25rem, 1.16rem + 0.43vw, 1.5rem); /* h4 & Hero P */
+  --step-2: clamp(1.56rem, 1.41rem + 0.76vw, 2rem); /* h3 */
+  --step-3: clamp(1.95rem, 1.71rem + 1.24vw, 2.66rem); /* h2 */
+  --step-4: clamp(2.44rem, 2.05rem + 1.93vw, 3.55rem); /* h1 */
+}
+
+/* =========================================
+   Universal Reset
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   Global Styles & Element Selectors 
+   ========================================= */
+body {
+  font-family: "Inter", sans-serif;
+  font-size: var(--step-0);
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+
+  /*Ambient Glow / Mesh Gradient Background */
+  background-image:
+    radial-gradient(at 0% 0%, rgba(194, 168, 120, 0.3) 0px, transparent 70vw),
+    /* Top-Left: Soft Gold */
+    radial-gradient(at 100% 0%, rgba(31, 61, 43, 0.25) 0px, transparent 70vw),
+    /* Top-Right: Deep Green */
+    radial-gradient(
+        at 100% 100%,
+        rgba(194, 168, 120, 0.3) 0px,
+        transparent 70vw
+      ),
+    /* Bottom-Right: Soft Gold */
+    radial-gradient(at 0% 100%, rgba(31, 61, 43, 0.25) 0px, transparent 70vw); /* Bottom-Left: Deep Green */
+
+  background-attachment: fixed; /* Keeps the glowing orbs in place while scrolling */
+}
+/* Custom Branded Text Selection */
+::selection {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+::-moz-selection {
+  /* For Firefox */
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+/* Headings use Poppins */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary);
+  margin-top: 0;
+}
+
+/* Advanced Selector: :is() for explicit type scale */
+:is(h1, h2, h3, h4) {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--step-4);
+}
+h2 {
+  font-size: var(--step-3);
+}
+h3 {
+  font-size: var(--step-2);
+}
+h4 {
+  font-size: var(--step-1);
+}
+
+/* Adds specific spacing ONLY when a paragraph directly follows an h2 */
+h2 + p {
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   Accessibility & Skip Link
+   ========================================= */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: var(--accent);
+  color: #1a1a1a;
+  padding: 10px 15px;
+  border-radius: 5px;
+  z-index: 9999;
+  font-weight: bold;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+/* Creates a highly visible outline only for keyboard users, not mouse clickers */
+:focus-visible {
+  outline: 3px dashed var(--accent);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   Header & Navigation (Modern Green)
+   ========================================= */
+.modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  background-color: var(--primary);
+  border-bottom: 4px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top of all other content */
+}
+
+.modern-header .logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white); /* White text to pop on green */
+  letter-spacing: -0.5px;
+
+  /*Removes the default link underline */
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.modern-header .logo span {
+  color: var(--accent);
+}
+
+/*Adds a subtle fade effect when they hover over your logo */
+.modern-header .logo:hover {
+  opacity: 0.8;
+}
+
+.modern-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 35px;
+}
+
+.modern-header nav ul li a {
+  color: var(--white); /* White links */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.modern-header nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.modern-header nav ul li a:hover::after,
+.modern-header nav ul li a.active::after {
+  width: 100%;
+}
+
+.modern-header nav ul li a:hover,
+.modern-header nav ul li a.active {
+  color: var(--accent); /* Turn gold on hover/active */
+  background-color: transparent;
+}
+
+/* =========================================
+   12-Column Grid Layout System
+   ========================================= */
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  max-width: 1150px;
+  margin: 40px auto 80px auto; /* Reduced top margin to remove excess white space */
+  padding: 0 20px;
+}
+
+/* Base styling for all content blocks */
+.hero,
+.intro,
+.bio,
+.skills,
+.profile-photo,
+.contact-form,
+.project-card {
+  background-color: var(--white);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  grid-column: span 12; /* Default to full width on mobile */
+  height: 100%;
+}
+
+/* Adds a bottom margin to all project cards EXCEPT the last one */
+.project-card:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+/* Desktop Grid Adjustments */
+@media (min-width: 768px) {
+  .hero,
+  .intro,
+  .bio,
+  .skills,
+  .profile-photo,
+  .contact-form {
+    grid-column: 2 / 12; /* Widened to match the new Hero layout! */
+  }
+
+  .project-card {
+    grid-column: span 4;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   Modern Split Hero Layout
+   ========================================= */
+.hero.modern-hero {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  grid-column: 2 / 12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.hero-text {
+  flex: 1.5; /* 60% of the space */
+  text-align: left;
+  z-index: 2; /* Keeps text above the background accent */
+}
+
+.hero-visual {
+  flex: 1; /* 40% of the space */
+  z-index: 2;
+}
+
+.code-label {
+  font-family: monospace;
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.modern-hero h2 {
+  font-size: var(--step-4);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.modern-hero p {
+  font-size: var(--step-1);
+  color: #555;
+  max-width: 90%;
+}
+
+.modern-hero img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(31, 61, 43, 0.15);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .hero.modern-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .hero-text,
+  .hero-visual {
+    width: 100%;
+  }
+  .modern-hero p {
+    margin: 0 auto;
+  }
+}
+
+/* Responsive image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* =========================================
+   Table Styling
+   ========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+th,
+td {
+  border: 1px solid #eaeaea;
+  padding: 16px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary);
+  color: var(--bg);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(194, 168, 120, 0.1);
+}
+
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+tbody tr:hover {
+  background-color: rgba(
+    194,
+    168,
+    120,
+    0.25
+  ); /* Highlights the row with soft gold */
+}
+
+/* =========================================
+   Form Styling
+   ========================================= */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 25px;
+  color: var(--primary);
+}
+
+#name {
+  border-left: 4px solid var(--accent);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background-color: var(--bg);
+  transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form select:focus,
+form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 61, 43, 0.1);
+}
+
+form textarea {
+  height: 160px;
+  resize: vertical;
+}
+
+fieldset {
+  margin-top: 30px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+legend {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 0 10px;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--bg);
+  padding: 16px 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   Project Card Hover Effects
+   ========================================= */
+.project-card {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(31, 61, 43, 0.15);
+  border-color: var(--accent);
+  cursor: pointer;
+}
+
+.project-card img {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+/* =========================================
+   Footer Styling
+   ========================================= */
+footer {
+  background-color: var(--primary);
+  color: var(--bg);
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+footer p,
+footer a {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+/* =========================================
+   PREMIUM HERO UPGRADES (Typography, CTAs, Marquee)
+   ========================================= */
+
+/* The new hierarchy tag above the headline */
+.hero-tag {
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+/* Call to Action Buttons */
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02); /* Premium micro-interaction */
+  box-shadow: 0 10px 20px rgba(31, 61, 43, 0.15);
+}
+
+.btn.primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* Social Links */
+.hero-socials {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-socials a {
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+  display: inline-block;
+}
+
+.hero-socials a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   THE LIVE PROFILE CARD
+   ========================================= */
+.live-profile-card {
+  background-color: var(--primary);
+  border-radius: 16px;
+  padding: 35px 30px;
+  color: var(--white);
+  box-shadow: 0 20px 40px rgba(31, 61, 43, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.live-profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(31, 61, 43, 0.3);
+}
+.skill-percent {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-left: 15px;
+  font-weight: 700;
+  width: 35px; /* Keeps all the numbers perfectly aligned in a column */
+  text-align: right;
+}
+
+.card-header {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+}
+
+.card-header h2 {
+  color: var(--white);
+  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+}
+
+.card-header p {
+  color: var(--accent);
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  width: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bg);
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+.card-avatar {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* =========================================
+   SIGNATURE ACCENT (Background Code)
+   ========================================= */
+.signature-accent {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  font-family: monospace;
+  font-size: 2rem;
+  color: var(--primary);
+  opacity: 0.03; /* Barely visible */
+  pointer-events: none; /* Stops it from interfering with clicks */
+  z-index: 0;
+  white-space: pre;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS FIXES
+   ========================================= */
+@media (max-width: 768px) {
+  /* 1. Stack the header vertically */
+  .modern-header {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  /* 2. Center the links and let them wrap if needed */
+  .modern-header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* 3. Center the hero text and buttons for mobile */
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-actions,
+  .hero-socials {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* 4. Hide the background code accent to keep tiny screens readable */
+  .signature-accent {
+    display: none;
+  }
+
+  /* 5. Ensure the profile card fits perfectly */
+  .live-profile-card {
+    padding: 25px 20px;
+  }
+
+  .skill-name {
+    width: 80px; /* Slightly narrower text label for mobile */
+  }
+}
+
+/* =========================================
+   ABOUT PAGE: FIGURE & PHOTO 
+   ========================================= */
+.about-figure {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-figure img {
+  width: 100%;
+  max-width: 450px; /* Keeps it from getting too huge on desktop */
+  aspect-ratio: 4 / 5; /* Forces a nice portrait crop */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 30px rgba(31, 61, 43, 0.15);
+}
+
+.about-figure figcaption {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   PREMIUM PROJECT CARD UPGRADES
+   ========================================= */
+/* Resets the card to allow edge-to-edge images */
+.project-card {
+  padding: 0 !important; /* Overrides the generic section padding */
+  overflow: hidden; /* Ensures the image doesn't break the rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forces every single image to be the exact same perfect size */
+img.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Perfect widescreen rectangle */
+  object-fit: cover; /* Zooms and crops automatically without stretching */
+  margin: 0;
+  border-radius: 12px 12px 0 0; /* Rounds only the top corners */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Styles the text container */
+.project-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Tells the content to fill all remaining space */
+}
+
+/* The small category tag */
+.project-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+/* Tighter, neater project titles */
+.project-content h2 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+/* Muted, highly readable descriptions */
+.project-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Pushes the "View Project" link to the absolute bottom! */
+}
+
+/* Sleek View Project link */
+.project-link {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+/* Custom Branded Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 10px;
+  border: 3px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+
+/* =========================================
+   FONTAWESOME ICON SIZING (Global)
+   ========================================= */
+.hero-socials a i,
+.social-links a i {
+  font-size: 1.25rem; /* Makes the icons slightly larger than the text */
+  margin-right: 6px; /* Adds perfect spacing between the icon and the word */
+  vertical-align: middle; /* Ensures the icon aligns perfectly with the text baseline */
+}
