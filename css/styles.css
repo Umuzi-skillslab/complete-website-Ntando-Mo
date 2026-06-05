@@ -831,4 +831,12 @@ img.project-image {
   background-color: var(--accent);
 }
 
-
+/* =========================================
+   FONTAWESOME ICON SIZING (Global)
+   ========================================= */
+.hero-socials a i,
+.social-links a i {
+  font-size: 1.25rem; /* Makes the icons slightly larger than the text */
+  margin-right: 6px; /* Adds perfect spacing between the icon and the word */
+  vertical-align: middle; /* Ensures the icon aligns perfectly with the text baseline */
+}
